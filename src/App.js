@@ -154,11 +154,9 @@ function App() {
                     <h1 className="fs-120 custom-font-jakarta text-primary fw-extra-bold mb-4 mb-lg-30 mb-xxl-40 lh-1">
                       Mumbai Book Fair
                     </h1>
-                    <p className="custom-jakarta custom-font-style-2">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s,.
-                    </p>
+                    <h3 className="custom-jakarta custom-font-style-2">
+                    Celebrating the Power of Words
+                    </h3>
                     <div className="event-counter event-counter-2 py-20 py-xxl-40">
                       <div className="row row-cols-2 row-cols-md-3 gy-lg-0 gy-2 justify-content-between">
                         <div className="col">
@@ -256,9 +254,9 @@ function App() {
                       Highlights
                     </span>
                     <h2 className="title display-3 fw-extra-bold d-flex flex-column">
-                      <span className="mb-n2 text-opacity">What</span>
+                      <span className="mb-n2 text-opacity">What's</span>
                       <span className="sub-title fw-extra-bold text-primary">
-                        To Expect
+                        New
                       </span>
                     </h2>
                   </div>
@@ -267,9 +265,7 @@ function App() {
                 <div className="col-lg-5">
                   <div className="highlights-text">
                     <p className="custom-jakarta custom-font-style-2 text-lg-end mb-2">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, .
+                    The Mumbai Book Festival, organized by the National Book Trust, India (under the Ministry of Education, Government of India), is making its debut this April at the centrally located Azad Maidan, Mumbai.
                     </p>
                   </div>
                 </div>
@@ -425,18 +421,14 @@ function App() {
                       </span>
                     </h2>
                     <p className="custom-jakarta custom-font-style-2 mb-0 mt-30">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book..
+                    The Mumbai Book Festival, organized by the National Book Trust, India (under the Ministry of Education, Government of India), is making its debut this April at the centrally located Azad Maidan, Mumbai. It promises to be a landmark event in the national publishing calendar, bringing together a diverse array of national as well as international exhibitors.<br/> <br/> Featuring the theme "Books for All," the festival offers a multifaceted experience with literary discussions, cultural performances, and activities for all age groups. This inaugural edition will host over 300 exhibitors and expects to welcome more than 100,000 visitors, fostering a vibrant exchange of ideas and stories.
                     </p>
                   </div>
                   {/* section-title */}
                   <div className="about-3-text d-flex flex-column flex-lg-row gap-4 justify-content-between align-items-lg-center mb-40 mb-lg-60">
                     <div>
                       <h4 className="fw-extra-bold custom-jakarta">
-                        21-30 April, 2025
+                        1-5 April, 2025
                       </h4>
                       <p className="custom-jakarta custom-font-style-2 fw-semibold mb-0">
                         4pm-12am
@@ -606,9 +598,10 @@ function App() {
                     </div>
                     {/* Tabs */}
                     <ul
-                      className="schedule-tabs nav nav-pills mb-50 mb-lg-70 d-flex justify-content-between justify-content-lg-center"
+                      className="schedule-tabs nav nav-pills mb-10 mb-lg-10 d-flex justify-content-between justify-content-lg-center"
                       id="pills-tab"
                       role="tablist"
+                   
                     >
                       <li className="nav-item" role="presentation">
                         <button
@@ -620,9 +613,10 @@ function App() {
                           role="tab"
                           aria-controls="day-1"
                           aria-selected="true"
+                          style={{ fontSize: "16px" , padding: " 18px 36px  "}}
                         >
-                          <span className="fs-3 fw-extra-bold mb-0">Day 1</span>
-                          <span className="fs-5 fw-semibold mb-0 d-none d-lg-block">
+                          <span className="fw-bold mb-0">Day 1</span>
+                          <span className="d-none d-lg-block" style={{ fontSize: "12px" }}>
                             August 25, 2023
                           </span>
                         </button>
@@ -637,10 +631,11 @@ function App() {
                           role="tab"
                           aria-controls="day-2"
                           aria-selected="false"
+                          style={{ fontSize: "16px" , padding: " 18px 36px  "}}
                         >
-                          <span className="fs-3 fw-extra-bold mb-0">Day 2</span>
-                          <span className="fs-5 fw-semibold mb-0 d-none d-lg-block">
-                            August 25, 2023
+                          <span className="fw-bold mb-0">Day 2</span>
+                          <span className="d-none d-lg-block" style={{ fontSize: "12px" }}>
+                            August 26, 2023
                           </span>
                         </button>
                       </li>
@@ -654,10 +649,48 @@ function App() {
                           role="tab"
                           aria-controls="day-3"
                           aria-selected="false"
+                          style={{ fontSize: "16px" , padding: " 18px 36px  " }}
                         >
-                          <span className="fs-3 fw-extra-bold mb-0">Day 3</span>
-                          <span className="fs-5 fw-semibold mb-0 d-none d-lg-block">
-                            August 25, 2023
+                          <span className="fw-bold mb-0">Day 3</span>
+                          <span className="d-none d-lg-block" style={{ fontSize: "12px" }}>
+                            August 27, 2023
+                          </span>
+                        </button>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <button
+                          className="schedule-button"
+                          id="day-4-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#day-4"
+                          type="button"
+                          role="tab"
+                          aria-controls="day-4"
+                          aria-selected="false"
+                          style={{ fontSize: "16px" , padding: " 18px 36px  " }}
+                          
+                        >
+                          <span className="fw-bold mb-0">Day 4</span>
+                          <span className="d-none d-lg-block" style={{ fontSize: "12px" }}>
+                            August 28, 2023
+                          </span>
+                        </button>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <button
+                          className="schedule-button"
+                          id="day-5-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#day-5"
+                          type="button"
+                          role="tab"
+                          aria-controls="day-5"
+                          aria-selected="false"
+                          style={{ fontSize: "16px" , padding: " 18px 36px  " }}
+                        >
+                          <span className="fw-bold mb-0">Day 5</span>
+                          <span className="d-none d-lg-block" style={{ fontSize: "12px" }}>
+                            August 29, 2023
                           </span>
                         </button>
                       </li>
@@ -983,6 +1016,218 @@ function App() {
                         </ul>
                       </div>
                       {/*day-3-tab  */}
+                      {/*day-4-tab  */}
+                      <div
+                        className="tab-pane fade"
+                        id="day-4"
+                        role="tabpanel"
+                        aria-labelledby="day-4-tab"
+                        tabIndex={0}
+                      >
+                        <ul className="schedule-tabs-content list-unstyled d-flex flex-column mb-0 gap-30">
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              11:00 AM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              12:30 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem &amp; Ipsum
+                              </h2>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              02:00 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                              <p className="custom-jakarta custom-font-style-2">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been
+                                the industry's standard dummy text ever since
+                                the 1500s, .
+                              </p>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              04:00 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                              <p className="custom-jakarta custom-font-style-2">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been
+                                the industry's standard dummy text ever since
+                                the 1500s, .
+                              </p>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              06:30 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              08:00 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                              <p className="custom-jakarta custom-font-style-2">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been
+                                the industry's standard dummy text ever since
+                                the 1500s, . .
+                              </p>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              10:00 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                              <p className="custom-jakarta custom-font-style-2">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been
+                                the industry's standard dummy text ever since
+                                the 1500s, .
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      {/*day-4-tab  */}
+                      {/*day-5-tab  */}
+                      <div
+                        className="tab-pane fade"
+                        id="day-5"
+                        role="tabpanel"
+                        aria-labelledby="day-5-tab"
+                        tabIndex={0}
+                      >
+                        <ul className="schedule-tabs-content list-unstyled d-flex flex-column mb-0 gap-30">
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              11:00 AM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              12:30 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem &amp; Ipsum
+                              </h2>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              02:00 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                              <p className="custom-jakarta custom-font-style-2">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been
+                                the industry's standard dummy text ever since
+                                the 1500s, .
+                              </p>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              04:00 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                              <p className="custom-jakarta custom-font-style-2">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been
+                                the industry's standard dummy text ever since
+                                the 1500s, .
+                              </p>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              06:30 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              08:00 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                              <p className="custom-jakarta custom-font-style-2">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been
+                                the industry's standard dummy text ever since
+                                the 1500s, . .
+                              </p>
+                            </div>
+                          </li>
+                          <li className="d-flex flex-column flex-lg-row gap-1 gap-lg-70 gap-xxl-90">
+                            <h2 className="fw-extra-bold schedule-time text-opacity custom-jakarta">
+                              10:00 PM
+                            </h2>
+                            <div>
+                              <h2 className="fw-semibold text-opacity custom-jakarta">
+                                Lorem Ipsum
+                              </h2>
+                              <p className="custom-jakarta custom-font-style-2">
+                                Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been
+                                the industry's standard dummy text ever since
+                                the 1500s, .
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      {/*day-5-tab  */}
                     </div>
                     {/* Tabs-Contents */}
                   </div>
@@ -1338,7 +1583,7 @@ function App() {
 
           {/*Pricing Section ======================*/}
           <section
-            id="pricing"
+            id="team"
             className="pricing-section pricing-1 pb-50 pb-lg-100 pb-xxl-120"
           >
             <div className="container" id="Team">
@@ -2321,7 +2566,7 @@ function App() {
 
           {/*Merchandise Section ======================*/}
           <section
-            id="merchandise"
+            id="registration"
             className="merchandise-section merchandise-1 position-relative mb-50 mb-lg-100 mb-xxl-120 py-50 py-lg-100 py-xxl-120"
           >
             <div className="container" id="ticket">
@@ -2362,17 +2607,17 @@ function App() {
                     alt="img"
                   />
                 </div>
-                <div className="swiper merchandise-swiper  py-20">
+                <div className="swiper merchandise-swiper py-20">
                   <div className="swiper-wrapper">
                     <div className="swiper-slide">
                       <div className="merchandise-wrapper">
                         <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="img" />
+                          <img src="assets/images/Ticket.png" alt="Volunteer" />
                         </div>
                         <div className="d-flex justify-content-between align-items-center">
                           <div className="product-information">
-                            <h5>Student </h5>
-                            <h6 className="text-primary fw-bold">₹100 </h6>
+                            <h5>Volunteer</h5>
+                            <h6 className="text-primary fw-bold">Free</h6>
                           </div>
                           <div>
                             <a
@@ -2386,16 +2631,15 @@ function App() {
                         </div>
                       </div>
                     </div>
-                    {/* swiper-slide  */}
                     <div className="swiper-slide">
                       <div className="merchandise-wrapper">
                         <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="img" />
+                          <img src="assets/images/Ticket.png" alt="Exhibitor" />
                         </div>
                         <div className="d-flex justify-content-between align-items-center">
                           <div className="product-information">
-                            <h5>Media</h5>
-                            <h6 className="text-primary fw-bold">₹1400</h6>
+                            <h5>Exhibitor</h5>
+                            <h6 className="text-primary fw-bold">₹500</h6>
                           </div>
                           <div>
                             <a
@@ -2409,15 +2653,80 @@ function App() {
                         </div>
                       </div>
                     </div>
-                    {/* swiper-slide  */}
                     <div className="swiper-slide">
                       <div className="merchandise-wrapper">
                         <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="img" />
+                          <img src="assets/images/Ticket.png" alt="Author" />
                         </div>
                         <div className="d-flex justify-content-between align-items-center">
                           <div className="product-information">
-                            <h5>Genral</h5>
+                            <h5>Author</h5>
+                            <h6 className="text-primary fw-bold">Free</h6>
+                          </div>
+                          <div>
+                            <a
+                              href="#"
+                              className="btn btn-outline-primary btn-custom-light"
+                              aria-label="buttons"
+                            >
+                              Register
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="merchandise-wrapper">
+                        <div className="merchandise-image mb-4">
+                          <img src="assets/images/Ticket.png" alt="Speaker" />
+                        </div>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <div className="product-information">
+                            <h5>Speaker</h5>
+                            <h6 className="text-primary fw-bold">Free</h6>
+                          </div>
+                          <div>
+                            <a
+                              href="#"
+                              className="btn btn-outline-primary btn-custom-light"
+                              aria-label="buttons"
+                            >
+                              Register
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="merchandise-wrapper">
+                        <div className="merchandise-image mb-4">
+                          <img src="assets/images/Ticket.png" alt="Sponsor" />
+                        </div>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <div className="product-information">
+                            <h5>Sponsor</h5>
+                            <h6 className="text-primary fw-bold">Free</h6>
+                          </div>
+                          <div>
+                            <a
+                              href="#"
+                              className="btn btn-outline-primary btn-custom-light"
+                              aria-label="buttons"
+                            >
+                              Register
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="merchandise-wrapper">
+                        <div className="merchandise-image mb-4">
+                          <img src="assets/images/Ticket.png" alt="Visitor" />
+                        </div>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <div className="product-information">
+                            <h5>Visitor</h5>
                             <h6 className="text-primary fw-bold">₹Free</h6>
                           </div>
                           <div>
@@ -2432,35 +2741,29 @@ function App() {
                         </div>
                       </div>
                     </div>
-                    {/* swiper-slide  */}
-                    {/* <div className="swiper-slide">
-                    <div className="merchandise-wrapper">
-                      <div className="merchandise-image mb-4">
-                        <img
-                          src="assets/images/Ticket.png"
-                          alt="img"
-                        />
-                      </div>
-                      <div className="d-flex justify-content-between align-items-center">
-                        <div className="product-information">
-                          <h5>Black T-Shirt</h5>
-                          <h6 className="text-primary fw-bold">$24.99</h6>
+                    <div className="swiper-slide">
+                      <div className="merchandise-wrapper">
+                        <div className="merchandise-image mb-4">
+                          <img src="assets/images/Ticket.png" alt="Vendor" />
                         </div>
-                        <div>
-                          <a
-                            href="#"
-                            className="btn btn-outline-primary btn-custom-light"
-                            aria-label="buttons"
-                          >
-                            Buy Now
-                          </a>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <div className="product-information">
+                            <h5>Vendor</h5>
+                            <h6 className="text-primary fw-bold">Free</h6>
+                          </div>
+                          <div>
+                            <a
+                              href="#"
+                              className="btn btn-outline-primary btn-custom-light"
+                              aria-label="buttons"
+                            >
+                              Register
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div> */}
-                    {/* swiper-slide  */}
                   </div>
-                  {/* swiper-wrapper */}
                 </div>
                 {/* merchandise-swiper */}
               </div>
@@ -2555,9 +2858,10 @@ function App() {
                           href="#"
                           className="social-icon"
                           style={{
-                            fontSize: "24px",
+                            fontSize: "28px",
                             color: "#333",
                             transition: "color 0.3s ease",
+                            
                           }}
                         >
                           <i className="fa fa-facebook"></i>
@@ -2566,7 +2870,7 @@ function App() {
                           href="#"
                           className="social-icon"
                           style={{
-                            fontSize: "24px",
+                            fontSize: "28px",
                             color: "#333",
                             transition: "color 0.3s ease",
                           }}
@@ -2577,7 +2881,7 @@ function App() {
                           href="#"
                           className="social-icon"
                           style={{
-                            fontSize: "24px",
+                            fontSize: "28px",
                             color: "#333",
                             transition: "color 0.3s ease",
                           }}
@@ -2588,7 +2892,7 @@ function App() {
                           href="#"
                           className="social-icon"
                           style={{
-                            fontSize: "24px",
+                            fontSize: "28px",
                             color: "#333",
                             transition: "color 0.3s ease",
                           }}

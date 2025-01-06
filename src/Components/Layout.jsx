@@ -146,7 +146,7 @@ function Layout() {
                         href="#what-to-expect-section"
                         aria-label="nav-links"
                       >
-                        <span className="fw-semibold">What To Expect</span>
+                        <span className="fw-semibold">What's New</span>
                       </a>
                     </li>
                     <li className="nav-item">
@@ -158,16 +158,44 @@ function Layout() {
                         <span className="fw-semibold">About</span>
                       </a>
                     </li>
-                    <li className="nav-item">
+                    {/*Multiple dropdown  */}
+
+                    {/*  */}
+                    <li className="nav-item dropdown">
                       <a
-                        className="nav-link text-uppercase"
+                        className="nav-link text-uppercase dropdown-toggle"
                         href="#schedule"
-                        aria-label="nav-links"
+                        id="scheduleDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        aria-label="schedule-dropdown"
                       >
                         <span className="fw-semibold">Schedule</span>
                       </a>
+                      <ul
+                        className="dropdown-menu"
+                        aria-labelledby="scheduleDropdown"
+                      >
+                        <li>
+                          <a className="dropdown-item" href="#azad-maidan">
+                            Azad Maidan
+                          </a>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="#venue-2">
+                            Venue 2
+                          </a>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="#venue-3">
+                            Venue 3
+                          </a>
+                        </li>
+                      </ul>
                     </li>
-                    <li className="nav-item">
+
+                    {/* <li className="nav-item">
                       <a
                         className="nav-link text-uppercase"
                         href="#speakers"
@@ -175,7 +203,41 @@ function Layout() {
                       >
                         <span className="fw-semibold">Speakers</span>
                       </a>
+                    </li> */}
+                    <li className="nav-item dropdown">
+                      <a
+                        className="nav-link text-uppercase dropdown-toggle"
+                        href="#speakers"
+                        id="speakersDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        aria-label="speakers-dropdown"
+                      >
+                        <span className="fw-semibold">Speakers</span>
+                      </a>
+                      <ul
+                        className="dropdown-menu"
+                        aria-labelledby="speakersDropdown"
+                      >
+                        <li>
+                          <a className="dropdown-item" href="#speakers-2023">
+                            2023
+                          </a>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="#speakers-2024">
+                            2024
+                          </a>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="#speakers-2025">
+                            2025
+                          </a>
+                        </li>
+                      </ul>
                     </li>
+
                     <li className="nav-item">
                       <a
                         className="nav-link text-uppercase"
@@ -188,7 +250,7 @@ function Layout() {
                     <li className="nav-item">
                       <a
                         className="nav-link text-uppercase"
-                        href="#faq"
+                        href="#FAQ"
                         aria-label="nav-links"
                       >
                         <span className="fw-semibold">FAQ</span>
@@ -207,9 +269,19 @@ function Layout() {
                   <motion.i
                     className="fa fa-language"
                     onClick={toggleDropdown}
-                    style={{ cursor: "pointer", fontSize: "20px", color: "darkblue", marginTop: "6px",marginLeft: "-30px" }}
+                    style={{
+                      cursor: "pointer",
+                      fontSize: "20px",
+                      color: "darkblue",
+                      marginTop: "6px",
+                      marginLeft: "-30px",
+                    }}
                     animate={{ rotate: [0, -15, 150, -150, 0] }}
-                    transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+                    transition={{
+                      duration: 2,
+                      ease: "easeInOut",
+                      repeat: Infinity,
+                    }}
                   />
 
                   {showDropdown && (

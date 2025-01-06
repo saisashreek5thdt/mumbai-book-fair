@@ -1,7 +1,7 @@
 // ===================== For Demo Server(Add 9 Days with current date) =====================
 
 function updateTargetDate() {
-  const now = new Date();
+  const now = new Date(2025, 3, 1);
   now.setHours(23, 59, 59, 0);
   const targetDate = now.getTime() + 10 * 24 * 60 * 60 * 1000;
   return targetDate;
