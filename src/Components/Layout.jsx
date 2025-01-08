@@ -4,11 +4,14 @@ import { motion } from "framer-motion";
 function Layout() {
   //
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown1, setShowDropdown1] = useState(false);
 
   const { setLanguage } = useContext(LanguageContext);
 
   const handleMouseEnter = () => setShowDropdown(true);
   const handleMouseLeave = () => setShowDropdown(false);
+  const handleMouseEnter1 = () => setShowDropdown1(true);
+  const handleMouseLeave1 = () => setShowDropdown1(false);
 
   const handleLanguageChange = (lang) => {
     setLanguage(lang);
@@ -204,20 +207,23 @@ function Layout() {
                         <span className="fw-semibold">Speakers</span>
                       </a>
                     </li> */}
-                    <li className="nav-item dropdown">
+                    <li
+                      className="nav-item dropdown"
+                      onMouseEnter={handleMouseEnter1}
+                      onMouseLeave={handleMouseLeave1}
+                    >
                       <a
                         className="nav-link text-uppercase dropdown-toggle"
                         href="#speakers"
                         id="speakersDropdown"
                         role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
+                        aria-expanded={showDropdown1 ? 'true' : 'false'}
                         aria-label="speakers-dropdown"
                       >
                         <span className="fw-semibold">Speakers</span>
                       </a>
                       <ul
-                        className="dropdown-menu"
+                        className={`dropdown-menu ${showDropdown1 ? 'show' : ''}`}
                         aria-labelledby="speakersDropdown"
                       >
                         <li>
@@ -456,8 +462,8 @@ function Layout() {
                 aria-current="page"
                 href="#what-to-expect-section"
                 aria-label="nav-links"
-                // data-bs-toggle="dropdown"
-                // aria-expanded="false"
+              // data-bs-toggle="dropdown"
+              // aria-expanded="false"
               >
                 <span className="fw-semibold">What To Expect</span>
               </a>
@@ -494,8 +500,8 @@ function Layout() {
                 className="nav-link  text-uppercase"
                 href="#Team"
                 aria-label="nav-links"
-                // data-bs-toggle="dropdown"
-                // aria-expanded="false"
+              // data-bs-toggle="dropdown"
+              // aria-expanded="false"
               >
                 <span className="fw-semibold">Team</span>
               </a>
