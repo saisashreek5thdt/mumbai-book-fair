@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @charset "UTF-8";
 /*!
  * Bootstrap  v5.3.1 (https://getbootstrap.com/)
@@ -3312,11 +3318,14 @@ textarea.form-control-lg {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--bs-body-color);
+  /* color: var(--bs-body-color); */
+  color: #000;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: var(--bs-body-bg);
+  /* background-color: var(--bs-body-bg); */
+  /* background-color: #355cc9; */
+  background-color: rgba(0, 0, 0, 0.19);
   background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
@@ -11782,6 +11791,11 @@ textarea.form-control-lg {
 .text-break {
   word-wrap: break-word !important;
   word-break: break-word !important;
+}
+
+.text-event {
+  font-weight: bold;
+  color: #D91656 !important;
 }
 
 /* rtl:end:remove */
@@ -24233,7 +24247,8 @@ a {
 }
 
 .custom-font-jakarta {
-  font-family: var(--bs-font-family-style-4);
+  /* font-family: var(--bs-font-family-style-4); */
+  font-family: "Poppins";
 }
 
 .section-title {
@@ -24241,7 +24256,8 @@ a {
   z-index: 9;
 }
 .section-title .title, .section-title .sub-title {
-  font-family: var(--bs-font-family-style-4);
+  /* font-family: var(--bs-font-family-style-4); */
+  font-family: "Poppins";
 }
 @media (max-width: 1399.98px) {
   .section-title .title, .section-title .sub-title {
@@ -24428,7 +24444,7 @@ a {
   --bs-font-family-style-1: "Open Sans", sans-serif;
   --bs-font-family-style-2: "Roboto", sans-serif;
   --bs-font-family-style-3: "Poppins" , sans-serif;
-  --bs-font-family-style-4: "Plus Jakarta Sans" , sans-serif;
+  --bs-font-family-style-4: "Poppins" , sans-serif;
 }
 :root .leaflet-container a:hover {
   color: #080E19 !important;
@@ -26530,6 +26546,7 @@ a {
 .countdown-item {
   display: flex;
   align-items: center;
+  margin-top: 3.5rem;
 }
 
 .countdown-number {
@@ -26975,32 +26992,35 @@ a {
 .hero-7 {
   --bs-hero-7-bg: var(--bs-body-bg);
   --bs-hero-7-border-color: rgba(0, 0, 0, .06);
-  background-color: var(--bs-hero-7-bg);
+  /* background-color: var(--bs-hero-7-bg); */
+  --bg-parallax-image: url(../images/blog-content-image.jpg);
   border-bottom: 1px solid var(--bs-hero-7-border-color);
 }
 .hero-7 .odometer-value {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .hero-7 .hero-wrapper {
-  --bg-parallax-image: url(../images/home-7/hero-7-bg.png);
+  /* --bg-parallax-image: url(../images/home-7/hero-7-bg.png); */
+  /* --bg-parallax-image: url(../images/blog-content-image.jpg); */
+  border-radius: 32px;
   --bg-parallax-opacity: 1;
-  padding: 280px 0 130px 0;
+  /* padding: 70px 0 130px 0; */
 }
 @media (max-width: 1399.98px) {
   .hero-7 .hero-wrapper {
-    padding: 130px 0 80px 0;
+    padding: 140px 0 80px 0;
   }
 }
 @media (max-width: 991.98px) {
   .hero-7 .hero-wrapper {
     max-width: 100%;
-    padding: 220px 0 80px 0;
+    padding: 80px 0 80px 0;
   }
 }
 @media (max-width: 767.98px) {
   .hero-7 .hero-wrapper {
     max-width: 100%;
-    padding: 140px 0 60px 0;
+    padding: 60px 0 60px 0;
   }
 }
 
@@ -28137,13 +28157,18 @@ a {
 }
 
 .schedule-time {
-  min-width: 148px;
+  min-width: 148px !important;
   word-wrap: break-word;
+}
+
+.schedule-time h2 {
+  font-size: 25px !important;
 }
 
 .schedule-tabs-content li {
   border-bottom: 2px solid var(--bs-custom-inner-border-color);
   padding-bottom: 22px;
+  font-size: 25px !important;
 }
 .schedule-tabs-content li:last-child {
   border-bottom: 0;
@@ -29694,16 +29719,26 @@ a {
 }
 
 .dark-wrapper-bg {
-  --bs-dark-wrapper-bg: #28303F;
+  /* --bs-dark-wrapper-bg: #28303F; */
   padding: 100px 50px;
   border-radius: 30px;
-  background-color: var(--bs-dark-wrapper-bg);
+  /* background-color: var(--bs-dark-wrapper-bg); */
+  /* background-image: url("../images/strip-2.png"); */
+  /* background-image: url("https://www.shutterstock.com/image-vector/mumbai-skyline-panorama-indian-city-260nw-2404884133.jpg"); */
+  /* background-image: url("https://www.shutterstock.com/image-vector/vector-watercolor-sketch-mumbais-iconic-260nw-2391140319.jpg"); */
+  /* background-image: url("https://img.freepik.com/premium-photo/vibrant-mumbai-bustling-markets-landmarks-cultural-heritage_902820-4676.jpg?w=740"); */
+  background-image: url("../images/gateway.timer.jpg");
+  /* background-repeat: no-repeat; */
+  background-size: cover !important;
+  /* opacity: 50%; */
   max-width: 1420px;
   width: 100%;
+  height: 450px;
   margin: 0 auto;
 }
 .dark-wrapper-bg .cta-text {
-  color: var(--bs-white) !important;
+  /* color: var(--bs-white) !important; */
+  color: #4361EE !important;
 }
 .dark-wrapper-bg .arrow-up-right-big svg {
   fill: var(--bs-primary);
@@ -29714,7 +29749,8 @@ a {
   stroke: var(--bs-secondary);
 }
 .dark-wrapper-bg .countdown-label {
-  color: var(--bs-white);
+  /* color: var(--bs-white); */
+  color: #0c1542;
 }
 .dark-wrapper-bg .cta-percent-off {
   margin-left: -10px;
@@ -30093,7 +30129,8 @@ html {
 }
 
 .custom-jakarta {
-  font-family: var(--bs-font-family-style-4) !important;
+  /* font-family: var(--bs-font-family-style-4) !important; */
+  font-family: "Poppins";
 }
 
 .custom-poppins {
@@ -30618,6 +30655,11 @@ html {
     position: relative;
     left: -60px;
   }
+}
+
+.footerBG {
+  background-image: url("../images/footer/mbf-footer.png");
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=style.css.map */

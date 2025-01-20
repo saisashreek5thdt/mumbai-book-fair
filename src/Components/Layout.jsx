@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
 import { LanguageContext } from "../App";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 function Layout() {
   //
   const [showDropdown, setShowDropdown] = useState(false);
@@ -113,16 +115,17 @@ function Layout() {
                 <a
                   className="navbar-brand d-flex align-items-center gap-2"
                   aria-label="nav-brands"
+                  href="https://rajiv.bztech.in/"
                 >
                   <img
-                    style={{ width: "260px" }}
-                    src="assets/images/logoo.png"
+                    style={{ width: "220px" }}
+                    src="https://res.cloudinary.com/dsj9t6adh/image/upload/v1737313139/jzcn2tynshjpdjflpysa.png"
                     className="logo-light"
                     alt="logo"
                   />
                   <img
-                    style={{ width: "260px" }}
-                    src="assets/images/logoo.png"
+                    style={{ width: "220px" }}
+                    src="https://res.cloudinary.com/dsj9t6adh/image/upload/v1737313139/jzcn2tynshjpdjflpysa.png"
                     className="logo-dark"
                     alt="logo"
                   />
@@ -143,7 +146,7 @@ function Layout() {
               <div className="d-none d-xl-block">
                 <div className="d-flex gap-50 align-items-center">
                   <ul className="menu-list list-unstyled d-flex gap-40 navbar-nav mb-2 me-2 mb-lg-0">
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <a
                         className="nav-link active text-uppercase"
                         href="#what-to-expect-section"
@@ -151,7 +154,7 @@ function Layout() {
                       >
                         <span className="fw-semibold">What's New</span>
                       </a>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                       <a
                         className="nav-link text-uppercase"
@@ -198,7 +201,7 @@ function Layout() {
                       </ul>
                     </li>
 
-                    {/* <li className="nav-item">
+                    <li className="nav-item">
                       <a
                         className="nav-link text-uppercase"
                         href="#speakers"
@@ -206,8 +209,8 @@ function Layout() {
                       >
                         <span className="fw-semibold">Speakers</span>
                       </a>
-                    </li> */}
-                    <li
+                    </li>
+                    {/* <li
                       className="nav-item dropdown"
                       onMouseEnter={handleMouseEnter1}
                       onMouseLeave={handleMouseLeave1}
@@ -237,20 +240,31 @@ function Layout() {
                           </a>
                         </li>
                         <li>
-                          <a className="dropdown-item" href="#speakers-2025">
+                          <a className="dropdown-item" href="https://v2.bztech.in/" target="_blank">
                             2025
                           </a>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
 
                     <li className="nav-item">
                       <a
                         className="nav-link text-uppercase"
-                        href="#team"
+                        href="#Team"
                         aria-label="nav-links"
                       >
                         <span className="fw-semibold">Team</span>
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link text-uppercase"
+                        // href="#publishers"
+                        aria-label="nav-links"
+                        href="https://v3.bztech.in/"
+                        target="_blank"
+                      >
+                        <span className="fw-semibold">Publishers</span>
                       </a>
                     </li>
                     <li className="nav-item">
@@ -274,6 +288,9 @@ function Layout() {
 
                   <motion.i
                     className="fa fa-language"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Select Language"
                     onClick={toggleDropdown}
                     style={{
                       cursor: "pointer",
@@ -368,7 +385,9 @@ function Layout() {
       >
         <div className="offcanvas-header">
           <a className="navbar-brand" href="index.html" aria-label="nav-brands">
-            <img src="assets/images/logoo.png" alt="logo" />
+            <img src="https://res.cloudinary.com/dsj9t6adh/image/upload/v1737313139/jzcn2tynshjpdjflpysa.png" alt="logo"
+            style={{width:"305px"}}
+            />
           </a>
           {/*  */}
           <div style={{ position: "relative" }}>
@@ -456,18 +475,18 @@ function Layout() {
         </div>
         <div className="offcanvas-body d-flex justify-content-center">
           <ul className="navbar-nav custom-navbar-nav mb-2 mb-lg-0">
-            <li className="nav-item dropdown offcanvas-pages-dropdown">
+            {/* <li className="nav-item dropdown offcanvas-pages-dropdown">
               <a
                 className="nav-link  active text-uppercase"
                 aria-current="page"
                 href="#what-to-expect-section"
                 aria-label="nav-links"
-              // data-bs-toggle="dropdown"
-              // aria-expanded="false"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
                 <span className="fw-semibold">What To Expect</span>
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a
                 className="nav-link text-uppercase"
@@ -489,7 +508,7 @@ function Layout() {
             <li className="nav-item">
               <a
                 className="nav-link text-uppercase"
-                href="#Speakers"
+                href="#speakers"
                 aria-label="nav-links"
               >
                 <span className="fw-semibold">Speakers</span>

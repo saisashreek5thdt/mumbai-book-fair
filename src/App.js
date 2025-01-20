@@ -1,22 +1,41 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
+/* eslint-disable no-unused-vars */
 import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, createContext, useRef, useState } from "react";
 import Layout from "./Components/Layout";
 import "font-awesome/css/font-awesome.min.css"; // If using npm
-import { Swiper, SwiperSlide } from 'swiper/react';  // Import Swiper
+// import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper
+// import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
 // import { Autoplay } from 'swiper';  // Import Autoplay separately
-import "swiper/css";  // Import Swiper styles
+// import "swiper/css"; // Import Swiper styles
 import ScheduleSection from "./ScheduleFilter";
+import { Link } from "react-router-dom";
+// import { FaXTwitter } from "react-icons/fa6";
+import SocialIcons from "./Components/SocialIcons";
+import Highlights from "./Components/Highlights";
+// import HeroSectionMain from "./Components/HeroSectionMain";
+// import BlogSwiperGrid from "./BlogSwiperGrid";
+import TeamSection from "./TeamSection";
+import RegistrationSection from "./RegistrationSection";
 // import { DotLottiePlayer } from "@dotlottie/react-player";
 
 export const LanguageContext = createContext();
 
 function App() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      const style = window.getComputedStyle(sectionRef.current);
+      console.log("Section computed style:", style);
+    }
+  }, []);
   // const [showLoader, setShowLoader] = useState(true);
 
   const [language, setLanguage] = useState("en"); // Default language is English
   // Swiper.use([Autoplay]);
-
 
   // const lottieRef = useRef(null);
 
@@ -61,6 +80,9 @@ function App() {
       "assets/js/leaflet-routing-machine.min.js",
       // "assets/js/leaflet-scripts.js",
       "assets/js/scripts.js",
+      // "assets/fonts/js/all.min.js",
+      // "assets/fonts/js/fontawesome.min.js",
+      // "assets/fonts/js/conflict-detection.min.js"
     ];
 
     // Function to dynamically load a script
@@ -133,59 +155,91 @@ function App() {
           </div> */}
           {/* Header ======================*/}
           <Layout />
+          {/* <br/> */}
+
           {/*Hero Section ======================*/}
-          <section className="hero-section hero-7">
+          {/* <section className="hero-section hero-7 blog-content-image my-40 my-lg-50 position-relative overflow-hidden">
             <div className="hero-wrapper mx-auto position-relative parallax">
               <div className="container">
                 <div className="row gx-80 gy-50 gy-lg-0 align-items-center">
                   <div className="col-lg-4 col-xl-5">
                     <div className="d-flex align-items-end gap-30 position-relative py-lg-40">
                       <div className="hero-image-mask">
-                        <img
-                          style={{ borderRadius: "45px" }}
-                          src="assets/images/home-7/logo-pic.png"
-                          className="img-fluid"
-                          alt="img"
+                      <video
+                        style={{ borderRadius: "45px" }}
+                        src="https://res.cloudinary.com/dsj9t6adh/video/upload/v1737032611/xmabjnujseacous4u74k.webm"
+                        className="img-fluid"
+                        alt="img"
+                        autoPlay
+                        muted
+                        loop
                         />
+                         <video
+                          style={{ borderRadius: "45px" }}
+                          src="https://res.cloudinary.com/dsj9t6adh/video/upload/v1737032611/xmabjnujseacous4u74k.webmssets/images/MBF_logo.webm"
+                          alt="Mumbai Book Fair"
+                          autoPlay
+                      muted
+                        />
+                         <video
+                          src="https://res.cloudinary.com/dsj9t6adh/video/upload/v1737032611/xmabjnujseacous4u74k.webmssets/images/MBF_logo.webm"
+                      className="img-fluid rounded-5"
+                      alt="about-image"
+                      autoPlay
+                      muted
+                      style={{ width: "100%" }}
+                    />
+                        <HeroSectionMain />
                       </div>
-                      {/* <div className="hero-image-mask">
+                      <div className="hero-image-mask">
                         <img
                           src="assets/images/home-7/hero-image-2.png"
                           className="img-fluid"
                           alt="img"
                         />
-                      </div> */}
+                      </div>
                       <div className="star-icons d-flex align-items-end gap-0 position-absolute end-50">
                         <span className="star-icon-big">
                           <svg width={87} height={87}>
-                            {/* <use xlinkHref="#star-icon-big" /> */}
+                            <use xlinkHref="#star-icon-big" />
                           </svg>
                         </span>
                         <span className="star-icon-small">
                           <svg width={23} height={23}>
-                            {/* <use xlinkHref="#star-icon-small" /> */}
+                            <use xlinkHref="#star-icon-small" />
                           </svg>
                         </span>
                       </div>
                     </div>
                   </div>
-                  {/* col-6 */}
+                  
                   <div className="col-lg-8 col-xl-7">
-                    <h1 className="fs-120 custom-font-jakarta text-primary fw-extra-bold mb-4 mb-lg-30 mb-xxl-40 lh-1">
-                      Mumbai Book Fair
+                    <h1 className="fs-head-1 textHead text-primary fw-extra-bold mt-60 mb-4 mb-lg-30 mb-xxl-40 lh-1">
+                      Mumbai
                     </h1>
-                    <h3 className="custom-jakarta custom-font-style-2">
+                    <div className="logo-container fs-head-1 textHead text-primary fw-extra-bold mb-4 mb-lg-30 mb-xxl-40 lh-1">
+                      <h1 id="page-logo">
+                        Mumbai
+                      </h1>
+                    </div>
+                    <h1 className="fs-100 textHead text-primary fw-extra-bold mb-10 mb-lg-60 mb-xxl-40 lh-1">
+                      Book Fair
+                    </h1>
+                    <h1 className="fs-head-1 textHead text-primary fw-extra-bold textTag">
+                      Book Fair
+                    </h1>
+                    <h3 className="textHeadI">
                       Celebrating the Power of Words
                     </h3>
-                    <div className="event-counter event-counter-2 py-20 py-xxl-40">
+                    <div className="event-counter event-counter-2 py-30 py-xxl-40">
                       <div className="row row-cols-2 row-cols-md-3 gy-lg-0 gy-2 justify-content-between">
                         <div className="col">
                           <div className="d-flex align-items-center gap-1 gap-lg-2">
                             <span
-                              className="odometer text-primary display-2"
+                              className="odometer text-event display-2"
                               data-count-to={32}
                             />
-                            <h3 className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta">
+                            <h3 className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta" style={{ color: "#fff !important" }}>
                               <span>Event</span>
                               <span>Artists</span>
                             </h3>
@@ -197,7 +251,7 @@ function App() {
                               className="odometer text-primary display-2"
                               data-count-to={5}
                             />
-                            <h3 className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta">
+                            <h3 className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta" style={{ color: "#fff !important" }}>
                               <span>Event</span>
                               <span>Stages</span>
                             </h3>
@@ -206,10 +260,10 @@ function App() {
                         <div className="col-7">
                           <div className="d-flex align-items-center gap-1 gap-lg-2">
                             <span
-                              className="odometer text-primary display-2"
+                              className="odometer text-event display-2"
                               data-count-to={3}
                             />
-                            <h3 className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta">
+                            <h3 className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta" style={{ color: "#fff !important" }}>
                               <span>Days</span>
                               <span>Concert</span>
                             </h3>
@@ -217,7 +271,6 @@ function App() {
                         </div>
                       </div>
                     </div>
-                    {/* hero-counter */}
                     <div className="d-flex flex-column flex-lg-row gap-4 align-items-lg-center">
                       <div className="author-wrapper d-flex gap-3 gap-lg-20 py-10 align-items-center">
                         <div className="author-image d-flex gap-0 ps-10">
@@ -246,15 +299,234 @@ function App() {
                           Guest Speakers
                         </h3>
                       </div>
-                      {/* author-wrapper */}
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="ticket-arrow arrow-style-2 arrow-up-right"
                       >
                         <svg width={50} height={50}>
                           <use xlinkHref="#arrow-up-right" />
                         </svg>
-                      </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> */}
+          <section className="blog-content-section py-50 py-lg-80 py-xxl-100">
+            <div className="container">
+              <div className="row align-items-start position-relative">
+                <div className="col-12">
+                  <div className="blog-content-image my-40 my-lg-50 position-relative overflow-hidden">
+                    {/* <picture>
+                      <img src="assets/images/blog-content-image.jpg" class="img-fluid" alt="img" />
+                    </picture> */}
+                    <video
+                      style={{ margin: "40px" }}
+                      width="100%"
+                      height="100%"
+                      muted
+                      loop="true"
+                      autoplay="autoplay"
+                      // controls
+                      disablePictureInPicture
+                      controlslist="nofullscreen nodownload noplaybackrate foobar"
+                    >
+                      <source
+                        src="assets/images/sliderBG.webm"
+                        type="video/webm"
+                      />
+                      <source
+                        src="assets/images/sliderBG.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
+                </div>
+                {/* <div className="mx-auto col-12">
+                  <div className="row mx-auto my-auto">
+                    <div className="col">
+                      <div className="event-counter event-counter-2">
+                        <div className="row row-cols-2 row-cols-md-3 gy-lg-0 gy-2 justify-content-between">
+                          <div className="col">
+                            <div className="d-flex align-items-center gap-1 gap-lg-2">
+                              <span
+                                className="odometer text-event display-2"
+                                data-count-to={32}
+                              />
+                              <h3
+                                className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta"
+                                style={{ color: "#fff !important" }}
+                              >
+                                <span>Event</span>
+                                <span>Artists</span>
+                              </h3>
+                            </div>
+                          </div>
+                          <div className="col">
+                            <div className="d-flex align-items-center gap-1 gap-lg-2">
+                              <span
+                                className="odometer text-primary display-2"
+                                data-count-to={5}
+                              />
+                              <h3
+                                className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta"
+                                style={{ color: "#fff !important" }}
+                              >
+                                <span>Event</span>
+                                <span>Stages</span>
+                              </h3>
+                            </div>
+                          </div>
+                          <div className="col-7">
+                            <div className="d-flex align-items-center gap-1 gap-lg-2">
+                              <span
+                                className="odometer text-event display-2"
+                                data-count-to={3}
+                              />
+                              <h3
+                                className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta"
+                                style={{ color: "#fff !important" }}
+                              >
+                                <span>Days</span>
+                                <span>Concert</span>
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col">
+                      <div className="d-flex flex-column flex-lg-row gap-4 align-items-lg-center">
+                        <div className="author-wrapper d-flex gap-3 gap-lg-20 py-10 align-items-center">
+                          <div className="author-image d-flex gap-0 ps-10">
+                            <img
+                              className="hero-author"
+                              src="assets/images/Icon-Pic.png"
+                              alt="img"
+                            />
+                            <img
+                              className="hero-author ms-n3"
+                              src="assets/images/Icon-Pic.png"
+                              alt="img"
+                            />
+                            <img
+                              className="hero-author ms-n3"
+                              src="assets/images/Icon-Pic.png"
+                              alt="img"
+                            />
+                            <div className="circle hero-author ms-n3">
+                              <h4 className="text-white fw-extra-bold mb-0">
+                                75+
+                              </h4>
+                            </div>
+                          </div>
+                          <h3 className="hero-author-title custom-jakarta mb-0 fw-extra-bold pe-10">
+                            Guest Speakers
+                          </h3>
+                        </div>
+                        <Link
+                          to="#"
+                          className="ticket-arrow arrow-style-2 arrow-up-right"
+                        >
+                          <svg width={50} height={50}>
+                            <use xlinkHref="#arrow-up-right" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
+                <div className="row">
+                  <div className="col">
+                    <div className="event-counter event-counter-2">
+                      <div className="row row-cols-2 row-cols-md-3 gy-lg-0 gy-2 justify-content-between">
+                        <div className="col">
+                          <div className="d-flex align-items-center gap-1 gap-lg-2">
+                            <span
+                              className="odometer text-event display-2"
+                              data-count-to={32}
+                            />
+                            <h3
+                              className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta"
+                              style={{ color: "#fff !important" }}
+                            >
+                              <span>Event</span>
+                              <span>Artists</span>
+                            </h3>
+                          </div>
+                        </div>
+                        <div className="col">
+                          <div className="d-flex align-items-center gap-1 gap-lg-2">
+                            <span
+                              className="odometer text-primary display-2"
+                              data-count-to={5}
+                            />
+                            <h3
+                              className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta"
+                              style={{ color: "#fff !important" }}
+                            >
+                              <span>Event</span>
+                              <span>Stages</span>
+                            </h3>
+                          </div>
+                        </div>
+                        <div className="col-7">
+                          <div className="d-flex align-items-center gap-1 gap-lg-2">
+                            <span
+                              className="odometer text-event display-2"
+                              data-count-to={3}
+                            />
+                            <h3
+                              className="fw-extra-bold d-flex flex-column mb-0 custom-jakarta"
+                              style={{ color: "#fff !important" }}
+                            >
+                              <span>Days</span>
+                              <span>Concert</span>
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col">
+                    <div className="d-flex flex-column flex-lg-row gap-4 align-items-lg-center">
+                      <div className="author-wrapper d-flex gap-3 gap-lg-20 py-10 align-items-center">
+                        <div className="author-image d-flex gap-0 ps-10">
+                          <img
+                            className="hero-author"
+                            src="assets/images/Icon-Pic.png"
+                            alt="img"
+                          />
+                          <img
+                            className="hero-author ms-n3"
+                            src="assets/images/Icon-Pic.png"
+                            alt="img"
+                          />
+                          <img
+                            className="hero-author ms-n3"
+                            src="assets/images/Icon-Pic.png"
+                            alt="img"
+                          />
+                          <div className="circle hero-author ms-n3">
+                            <h4 className="text-white fw-extra-bold mb-0">
+                              75+
+                            </h4>
+                          </div>
+                        </div>
+                        <h3 className="hero-author-title custom-jakarta mb-0 fw-extra-bold pe-10">
+                          Guest Speakers
+                        </h3>
+                      </div>
+                      <Link
+                        to="https://v2.bztech.in/"
+                        target="_blank"
+                        className="ticket-arrow arrow-style-2 arrow-up-right"
+                      >
+                        <svg width={50} height={50}>
+                          <use xlinkHref="#arrow-up-right" />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -285,23 +557,27 @@ function App() {
                 <div className="col-lg-5">
                   <div className="highlights-text">
                     <p className="custom-jakarta custom-font-style-2 text-lg-end mb-2">
-                      The Mumbai Book Festival, organized by the National Book Trust, India (under the Ministry of Education, Government of India), is making its debut this April at the centrally located Azad Maidan, Mumbai.
+                      The Mumbai Book Festival, organized by the National Book
+                      Trust, India (under the Ministry of Education, Government
+                      of India), is making its debut this April at the centrally
+                      located Azad Maidan, Mumbai.
                     </p>
                   </div>
                 </div>
               </div>
               {/* row */}
-              <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-30">
+
+              {/* <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-30">
                 <div className="col">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="highlights-item-3 text-decoration-none position-relative d-flex flex-column gap-20 px-30 px-lg-40 py-40 py-lg-50"
                   >
-                    {/* <div className="highlights-icon-style-1">
+                    <div className="highlights-icon-style-1">
                       <svg width={68} height={64}>
                         <use xlinkHref="#highlights-icon-1" />
                       </svg>
-                    </div> */}
+                    </div> 
                     <div className="highlights-icon-style-1">
                       <img
                         src="/children.gif"
@@ -314,15 +590,16 @@ function App() {
                       Childrens Activities
                     </h3>
                     <p className="custom-jakarta custom-font-style-2">
-                      A dedicated space promoting children’s literature and the joy of reading through storytelling,
-                      workshops, panel discussions, quizzes, and contests.
+                      A dedicated space promoting children’s literature and the
+                      joy of reading through storytelling, workshops, panel
+                      discussions, quizzes, and contests.
                     </p>
-                  </a>
+                  </Link>
                 </div>
-                {/* col */}
+                
                 <div className="col">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="highlights-item-3 text-decoration-none position-relative d-flex flex-column gap-20 px-30 px-lg-40 py-40 py-lg-50"
                   >
                     <div className="highlights-icon-style-1">
@@ -337,15 +614,16 @@ function App() {
                       Authors Corner
                     </h3>
                     <p className="custom-jakarta custom-font-style-2">
-                      A hub for literary enthusiasts with engaging dialogues, panel discussions,
-                      book launches, and lively interactions with renowned authors
+                      A hub for literary enthusiasts with engaging dialogues,
+                      panel discussions, book launches, and lively interactions
+                      with renowned authors
                     </p>
-                  </a>
+                  </Link>
                 </div>
-                {/* col */}
+                
                 <div className="col">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="highlights-item-3 text-decoration-none position-relative d-flex flex-column gap-20 px-30 px-lg-40 py-40 py-lg-50"
                   >
                     <div className="highlights-icon-style-1">
@@ -360,15 +638,16 @@ function App() {
                       Cultural Activities
                     </h3>
                     <p className="custom-jakarta custom-font-style-2">
-                      Experience cultural presentations from acclaimed
-                      bands and artists representing diverse Indian states and the vibrant city of Mumbai
+                      Experience cultural presentations from acclaimed bands and
+                      artists representing diverse Indian states and the vibrant
+                      city of Mumbai
                     </p>
-                  </a>
+                  </Link>
                 </div>
-                {/* col */}
+                
                 <div className="col">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="highlights-item-3 text-decoration-none position-relative d-flex flex-column gap-20 px-30 px-lg-40 py-40 py-lg-50"
                   >
                     <div className="highlights-icon-style-1">
@@ -386,15 +665,15 @@ function App() {
                       An open-to-all showcase of educative short films,
                       particularly designed to captivate young audiences
                     </p>
-                  </a>
+                  </Link>
                 </div>
-                {/* col */}
+                
                 <div className="col">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="highlights-item-3 text-decoration-none position-relative d-flex flex-column gap-20 px-30 px-lg-40 py-40 py-lg-50"
                   >
-                     <div className="highlights-icon-style-1">
+                    <div className="highlights-icon-style-1">
                       <img
                         src="/workshop.gif"
                         alt="Children's Activities Icon"
@@ -409,15 +688,15 @@ function App() {
                       Hands-on workshops featuring live culinary demonstrations,
                       theatre sessions, and other engaging activities.
                     </p>
-                  </a>
+                  </Link>
                 </div>
-                {/* col */}
+                
                 <div className="col">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="highlights-item-3 text-decoration-none position-relative d-flex flex-column gap-20 px-30 px-lg-40 py-40 py-lg-50"
                   >
-                     <div className="highlights-icon-style-1">
+                    <div className="highlights-icon-style-1">
                       <img
                         src="/international.gif"
                         alt="Children's Activities Icon"
@@ -429,13 +708,13 @@ function App() {
                       International Authors Meet
                     </h3>
                     <p className="custom-jakarta custom-font-style-2">
-                      A unique opportunity to interact with celebrated international authors,
-                      fostering global literary exchanges
+                      A unique opportunity to interact with celebrated
+                      international authors, fostering global literary exchanges
                     </p>
-                  </a>
-                </div>
-                {/* col */}
-              </div>
+                  </Link>
+                </div>                
+              </div>*/}
+              <Highlights />
               {/* row */}
             </div>
           </section>
@@ -470,31 +749,42 @@ function App() {
                       </span>
                     </h2>
                     <p className="custom-jakarta custom-font-style-2 mb-0 mt-30">
-                      The Mumbai Book Festival, organized by the National Book Trust, India (under the Ministry of Education, Government of India), is making its debut this April at the centrally located Azad Maidan, Mumbai. It promises to be a landmark event in the national publishing calendar, bringing together a diverse array of national as well as international exhibitors.<br /> <br /> Featuring the theme "Books for All," the festival offers a multifaceted experience with literary discussions, cultural performances, and activities for all age groups. This inaugural edition will host over 300 exhibitors and expects to welcome more than 100,000 visitors, fostering a vibrant exchange of ideas and stories.
+                      The Mumbai Book Festival, organized by the National Book
+                      Trust, India (under the Ministry of Education, Government
+                      of India), is making its debut this April at the centrally
+                      located Azad Maidan, Mumbai. It promises to be a landmark
+                      event in the national publishing calendar, bringing
+                      together a diverse array of national as well as
+                      international exhibitors.
+                      <br /> <br /> Featuring the theme "Books for All," the
+                      festival offers a multifaceted experience with literary
+                      discussions, cultural performances, and activities for all
+                      age groups. This inaugural edition will host over 300
+                      exhibitors and expects to welcome more than 100,000
+                      visitors, fostering a vibrant exchange of ideas and
+                      stories.
                     </p>
                   </div>
                   {/* section-title */}
                   <div className="about-3-text d-flex flex-column flex-lg-row gap-4 justify-content-between align-items-lg-center mb-40 mb-lg-60">
                     <div>
-                      <h4 className="fw-extra-bold custom-jakarta">
-                        1-5 April, 2025
-                      </h4>
-                      <p className="custom-jakarta custom-font-style-2 fw-semibold mb-0">
-                        4pm-12am
+                      <h4 className="fw-extra-bold custom-jakarta">Date</h4>
+                      <p className="custom-jakarta venueText custom-font-style-2 fw-semibold mb-0">
+                        1 - 5 April, 2025
                       </p>
                     </div>
                     <div>
                       <h4 className="text-uppercase custom-jakarta fw-extra-bold">
-                        Venues
+                        Venue
                       </h4>
-                      <p className="custom-jakarta custom-font-style-2 fw-semibold mb-0">
+                      <p className="custom-jakarta venueText custom-font-style-2 fw-semibold mb-0">
                         Azad Maidan, Mumbai
                       </p>
                     </div>
                   </div>
                   {/* about-3-text */}
                   <div className="d-block d-md-flex gap-4">
-                    <a
+                    {/* <a
                       href="#pricing"
                       className="btn btn-primary btn-style-2 btn-rounded align-items-center d-inline-flex gap-2 mb-3 mb-md-0"
                       aria-label="buttons"
@@ -505,7 +795,7 @@ function App() {
                         </svg>
                       </span>
                       Registration
-                    </a>
+                    </a> */}
                     {/* <a
             href="#merchandise"
             className="btn btn-outline-primary btn-outline-style-2 btn-rounded d-inline-flex align-items-center gap-2"
@@ -612,10 +902,11 @@ function App() {
           {/*About Section ======================*/}
           {/*LineUp Section ======================*/}
           <section
-            id="line-up"
+            id="speakers"
+            // id="line-up"
             className="lineup-section lineup-2 subscription-2 pt-40 pb-100 pt-lg-120 pb-lg-150 mb-20"
           >
-            <div className="container" id="Speakers">
+            <div className="container">
               <div className="row gx-60 gx-xxl-80 gy-30 align-items-center">
                 <div className="col-lg-4">
                   <div className="lineup-right-content mt-3 mt-lg-0">
@@ -638,8 +929,9 @@ function App() {
                       standard dummy text ever since the 1500s, .
                     </p>
                     <div className="py-2 pb-lg-0 pt-lg-3">
-                      <a
-                        href="#"
+                      <Link
+                        to="https://v2.bztech.in/"
+                        target="_blank"
                         className="download-link d-flex align-items-center gap-30"
                         aria-label="buttons"
                       >
@@ -649,7 +941,7 @@ function App() {
                             <use xlinkHref="#arrow-up-right" />
                           </svg>
                         </span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   {/* lineup-right-content */}
@@ -672,52 +964,15 @@ function App() {
                               <p className="author-name">Lorem Ipsum</p>
                               <div className="line-up-hover-content">
                                 <h5 className="fw-medium mb-20">
-                                  Lorem Ipsum :{" "}
+                                  Lorem Ipsum :
                                   <span className>
                                     Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text.{" "}
+                                    printing and typesetting industry. Lorem
+                                    Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum is
+                                    simply dummy text.
                                   </span>
                                 </h5>
-                                {/* <div className="line-up-icons d-flex align-items-center gap-3 gap-lg-20">
-                                <a
-                                  href="#"
-                                  className="facebook-icon"
-                                  aria-label="facebook"
-                                >
-                                  <svg width={20} height={20}>
-                                    <use xlinkHref="#facebook-icon" />
-                                  </svg>
-                                </a>
-                                <a
-                                  href="#"
-                                  className="instagram-icon"
-                                  aria-label="instagram"
-                                >
-                                  <svg width={20} height={20}>
-                                    <use xlinkHref="#instagram-icon" />
-                                  </svg>
-                                </a>
-                                <a
-                                  href="#"
-                                  className="youtube-icon"
-                                  aria-label="youtube"
-                                >
-                                  <svg width={20} height={20}>
-                                    <use xlinkHref="#youtube-icon" />
-                                  </svg>
-                                </a>
-                                {/* <a
-                                  href="#"
-                                  className="spotify-icon"
-                                  aria-label="spotify"
-                                >
-                                  <svg width={20} height={20}>
-                                    <use xlinkHref="#spotify-icon" />
-                                  </svg>
-                                </a> */}
                                 {/* </div>  */}
                               </div>
                             </div>
@@ -739,15 +994,14 @@ function App() {
                               <p className="author-name">Lorem Ipsum</p>
                               <div className="line-up-hover-content">
                                 <h5 className="fw-medium mb-20">
-                                  Genere :{" "}
+                                  Genere :
                                   <span className>
                                     Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text.{" "}
+                                    printing and typesetting industry. Lorem
+                                    Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum is
+                                    simply dummy text.
                                   </span>
-                                  {/* <span className="text-uppercase">Lorem Ipsum</span> */}
                                 </h5>
                               </div>
                             </div>
@@ -769,13 +1023,13 @@ function App() {
                               <p className="author-name">Lorem Ipsum</p>
                               <div className="line-up-hover-content">
                                 <h5 className="fw-medium mb-20">
-                                  Genere :{" "}
+                                  Genere :
                                   <span className>
                                     Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text.{" "}
+                                    printing and typesetting industry. Lorem
+                                    Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum is
+                                    simply dummy text.
                                   </span>
                                 </h5>
                               </div>
@@ -798,13 +1052,13 @@ function App() {
                               <p className="author-name">Lorem Ipsum</p>
                               <div className="line-up-hover-content">
                                 <h5 className="fw-medium mb-10">
-                                  Genere :{" "}
+                                  Genere :
                                   <span className>
                                     Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text.{" "}
+                                    printing and typesetting industry. Lorem
+                                    Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum is
+                                    simply dummy text.
                                   </span>
                                 </h5>
                               </div>
@@ -827,13 +1081,13 @@ function App() {
                               <p className="author-name">Lorem Ipsum</p>
                               <div className="line-up-hover-content">
                                 <h5 className="fw-medium mb-20">
-                                  Genere :{" "}
+                                  Genere :
                                   <span className>
                                     Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text.{" "}
+                                    printing and typesetting industry. Lorem
+                                    Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum is
+                                    simply dummy text.
                                   </span>
                                 </h5>
                               </div>
@@ -856,53 +1110,15 @@ function App() {
                               <p className="author-name">Lorem Ipsum</p>
                               <div className="line-up-hover-content">
                                 <h5 className="fw-medium mb-20">
-                                  Genere :{" "}
+                                  Genere :
                                   <span className="text-uppercase">
                                     Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.
-                                    Lorem Ipsum is simply dummy text.{" "}
+                                    printing and typesetting industry. Lorem
+                                    Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum is
+                                    simply dummy text.
                                   </span>
                                 </h5>
-                                {/* <div className="line-up-icons d-flex align-items-center gap-3 gap-lg-20">
-                                  <a
-                                    href="#"
-                                    className="facebook-icon"
-                                    aria-label="facebook"
-                                  >
-                                    <svg width={20} height={20}>
-                                      <use xlinkHref="#facebook-icon" />
-                                    </svg>
-                                  </a>
-                                  <a
-                                    href="#"
-                                    className="instagram-icon"
-                                    aria-label="instagram"
-                                  >
-                                    <svg width={20} height={20}>
-                                      <use xlinkHref="#instagram-icon" />
-                                    </svg>
-                                  </a>
-                                  <a
-                                    href="#"
-                                    className="youtube-icon"
-                                    aria-label="youtube"
-                                  >
-                                    <svg width={20} height={20}>
-                                      <use xlinkHref="#youtube-icon" />
-                                    </svg>
-                                  </a>
-                                  {/* <a
-                                  href="#"
-                                  className="spotify-icon"
-                                  aria-label="spotify"
-                                >
-                                  <svg width={20} height={20}>
-                                    <use xlinkHref="#spotify-icon" />
-                                  </svg>
-                                </a> */}
-                                {/* </div> */}
                               </div>
                             </div>
                             {/* lineup-image-hover */}
@@ -952,210 +1168,12 @@ function App() {
             </div>
             {/* container */}
           </section>
+
           {/*LineUp Section ======================*/}
 
           {/*Pricing Section ======================*/}
-          <section
-            id="team"
-            className="pricing-section pricing-1 pb-50 pb-lg-100 pb-xxl-120"
-          >
-            <div className="container" id="Team">
-              <div className="row gy-4 gy-lg-0 align-items-lg-end justify-content-lg-between mb-30 mb-lg-70">
-                <div className="col-lg-4">
-                  <div className="section-title">
-                    <span className="fs-3 straight-line-wrapper fw-semibold position-relative">
-                      <span className="straight-line" />
-                      Team
-                    </span>
-                    <h2 className="title display-3 fw-extra-bold d-flex flex-column">
-                      <span className="mb-n2 text-opacity">Executive</span>
-                      <span className="sub-title fw-extra-bold text-primary">
-                        Members
-                      </span>
-                    </h2>
-                  </div>
-                  {/* section-title */}
-                </div>
-                <div className="col-lg-5">
-                  <div className="highlights-text">
-                    <p className="custom-jakarta custom-font-style-2 text-lg-end mb-2">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* row */}
-              <div className="blog-content-wrapper position-relative">
-                <div className="ellipse-image-1">
-                  <img
-                    src="assets/images/home-1/ellipse-1.png"
-                    alt="ellipse-1"
-                  />
-                </div>
-                <Swiper
-                  className="blog-swiper"
-                  loop={true}
-                  spaceBetween={20}
-                  slidesPerView={2}
-                  autoplay={true}
-                >
-                  <SwiperSlide>
-                    <div className="blog-content">
-                      <div className="blog-content-4 custom-inner-bg">
-                        <div className="row gx-20 gy-50 gy-lg-0 align-items-center justify-content-between">
-                          <div className="col-lg-6 order-lg-2">
-                            <div className="blog-image">
-                              <img src="assets/images/pic.png" className="img-fluid" alt="img" />
-                            </div>
-                          </div>
-                          <div className="col-lg-6 order-lg-1">
-                            <div className="blog-left-content">
-                              <h2 className="blog-link fs-4 fw-bold">
-                                <a className="text-decoration-none" href="blog-single-1.html">
-                                  Lorem ipsum: Lorem ipsum
-                                </a>
-                              </h2>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="blog-content">
-                      <div className="blog-content-4 custom-inner-bg">
-                        <div className="row gx-20 gy-50 gy-lg-0 align-items-center justify-content-between">
-                          <div className="col-lg-6 order-lg-2">
-                            <div className="blog-image">
-                              <img src="assets/images/pic.png" className="img-fluid" alt="img" />
-                            </div>
-                          </div>
-                          <div className="col-lg-6 order-lg-1">
-                            <div className="blog-left-content">
-                              <h2 className="blog-link fs-4 fw-bold">
-                                <a className="text-decoration-none" href="blog-single-1.html">
-                                  Lorem ipsum: Lorem ipsum
-                                </a>
-                              </h2>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="blog-content">
-                      <div className="blog-content-4 custom-inner-bg">
-                        <div className="row gx-20 gy-50 gy-lg-0 align-items-center justify-content-between">
-                          <div className="col-lg-6 order-lg-2">
-                            <div className="blog-image">
-                              <img src="assets/images/pic.png" className="img-fluid" alt="img" />
-                            </div>
-                          </div>
-                          <div className="col-lg-6 order-lg-1">
-                            <div className="blog-left-content">
-                              <h2 className="blog-link fs-4 fw-bold">
-                                <a className="text-decoration-none" href="blog-single-1.html">
-                                  Lorem ipsum: Lorem ipsum
-                                </a>
-                              </h2>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="blog-content">
-                      <div className="blog-content-4 custom-inner-bg">
-                        <div className="row gx-20 gy-50 gy-lg-0 align-items-center justify-content-between">
-                          <div className="col-lg-6 order-lg-2">
-                            <div className="blog-image">
-                              <img src="assets/images/pic.png" className="img-fluid" alt="img" />
-                            </div>
-                          </div>
-                          <div className="col-lg-6 order-lg-1">
-                            <div className="blog-left-content">
-                              <h2 className="blog-link fs-4 fw-bold">
-                                <a className="text-decoration-none" href="blog-single-1.html">
-                                  Lorem ipsum: Lorem ipsum
-                                </a>
-                              </h2>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="blog-content">
-                      <div className="blog-content-4 custom-inner-bg">
-                        <div className="row gx-20 gy-50 gy-lg-0 align-items-center justify-content-between">
-                          <div className="col-lg-6 order-lg-2">
-                            <div className="blog-image">
-                              <img src="assets/images/pic.png" className="img-fluid" alt="img" />
-                            </div>
-                          </div>
-                          <div className="col-lg-6 order-lg-1">
-                            <div className="blog-left-content">
-                              <h2 className="blog-link fs-4 fw-bold">
-                                <a className="text-decoration-none" href="blog-single-1.html">
-                                  Lorem ipsum: Lorem ipsum
-                                </a>
-                              </h2>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="blog-content">
-                      <div className="blog-content-4 custom-inner-bg">
-                        <div className="row gx-20 gy-50 gy-lg-0 align-items-center justify-content-between">
-                          <div className="col-lg-6 order-lg-2">
-                            <div className="blog-image">
-                              <img src="assets/images/pic.png" className="img-fluid" alt="img" />
-                            </div>
-                          </div>
-                          <div className="col-lg-6 order-lg-1">
-                            <div className="blog-left-content">
-                              <h2 className="blog-link fs-4 fw-bold">
-                                <a className="text-decoration-none" href="blog-single-1.html">
-                                  Lorem ipsum: Lorem ipsum
-                                </a>
-                              </h2>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                </Swiper>
-                {/* swiper */}
-              </div>
-            </div>
-          </section>
+          <TeamSection />
+
           {/*Pricing Section ======================*/}
           {/*Separator Section ======================*/}
           <div className="container">
@@ -1168,7 +1186,7 @@ function App() {
             className="sponsor-section sponsor-1 bg-lg custom-inner-bg position-relative pt-50 pt-lg-100 pt-xxl-120 pb-30 pb-lg-80 pb-xxl-100"
           >
             <div className="ellipse-image-1">
-              <img src="assets/images/home-1/ellipse-1.png" alt="ellipse-1" />
+              <img src="assets/images/mbf-h1.png" alt="ellipse-1" />
             </div>
             <div className="container">
               <div className="row gy-4 gy-lg-0 align-items-lg-end justify-content-lg-between mb-30 mb-lg-70">
@@ -1204,85 +1222,85 @@ function App() {
                   <div className="swiper-wrapper">
                     <div className="swiper-slide">
                       <div className="brand-image position-relative">
-                        <a href="#">
+                        <Link to="#">
                           <img
                             src="assets/images/sponsor.png"
                             className="img-fluid"
                             alt="brand-image"
                           />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     {/* swiper-slide*/}
                     <div className="swiper-slide">
                       <div className="brand-image position-relative">
-                        <a href="#">
+                        <Link to="#">
                           <img
                             src="assets/images/sponsor.png"
                             className="img-fluid"
                             alt="brand-image"
                           />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     {/* swiper-slide*/}
                     <div className="swiper-slide">
                       <div className="brand-image position-relative">
-                        <a href="#">
+                        <Link to="#">
                           <img
                             src="assets/images/sponsor.png"
                             className="img-fluid"
                             alt="brand-image"
                           />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     {/* swiper-slide*/}
                     <div className="swiper-slide">
                       <div className="brand-image position-relative">
-                        <a href="#">
+                        <Link to="#">
                           <img
                             src="assets/images/sponsor.png"
                             className="img-fluid"
                             alt="brand-image"
                           />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     {/* swiper-slide*/}
                     <div className="swiper-slide">
                       <div className="brand-image position-relative">
-                        <a href="#">
+                        <Link to="#">
                           <img
                             src="assets/images/sponsor.png"
                             className="img-fluid"
                             alt="brand-image"
                           />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     {/* swiper-slide*/}
                     <div className="swiper-slide">
                       <div className="brand-image position-relative">
-                        <a href="#">
+                        <Link to="#">
                           <img
                             src="assets/images/sponsor.png"
                             className="img-fluid"
                             alt="brand-image"
                           />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     {/* swiper-slide*/}
                     <div className="swiper-slide">
                       <div className="brand-image position-relative">
-                        <a href="#">
+                        <Link to="#">
                           <img
                             src="assets/images/sponsor.png"
                             className="img-fluid"
                             alt="brand-image"
                           />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     {/* swiper-slide*/}
@@ -1315,79 +1333,79 @@ function App() {
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       // className="video-popup-link hover-area"
-                      data-cursor-text="Video"
+                      // data-cursor-text="Video"
                     >
-                      <img src="assets/images/G1.jpg" alt="img1" />
-                    </a>
+                      <img src="assets/images/gallery/a.jpg" alt="img1" />
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="assets/images/G2.png"
+                    <Link
+                      to="assets/images/gallery/b.jpg"
                       className="image-link hover-area"
-                      data-cursor-text="Image"
+                      // data-cursor-text="Image"
                     >
-                      <img src="assets/images/G2.png" alt="img2" />
-                    </a>
+                      <img src="assets/images/gallery/b.jpg" alt="img2" />
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       // className="video-popup-link hover-area"
-                      data-cursor-text="Video"
+                      // data-cursor-text="Video"
                     >
                       <img src="assets/images/G3.png" alt="img3" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="assets/images/G3.png"
+                    <Link
+                      to="assets/images/G3.png"
                       className="image-link hover-area"
-                      data-cursor-text="Image"
+                      // data-cursor-text="Image"
                     >
                       <img src="assets/images/G3.png" alt="img4" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="video-popup-link hover-area"
-                      data-cursor-text="Video"
+                      // data-cursor-text="Video"
                     >
                       <img src="assets/images/G3.png" alt="img5" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="assets/images/G2.png"
+                    <Link
+                      to="assets/images/G2.png"
                       className="image-link hover-area"
-                      data-cursor-text="Image"
+                      // data-cursor-text="Image"
                     >
                       <img src="assets/images/G2.png" alt="img6" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="video-popup-link hover-area"
-                      data-cursor-text="Video"
+                      // data-cursor-text="Video"
                     >
-                      <img src="assets/images/G3.png" alt="img7" />
-                    </a>
+                      <img src="assets/images/gallery/f.jpg" alt="img7" />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -1398,84 +1416,88 @@ function App() {
                 <div className="swiper-slide">
                   <div className="gallery-image">
                     <a
-                      href="assets/images/G2.png"
+                      href="assets/images/gallery/c.jpg"
                       className="image-link hover-area"
-                      data-cursor-text="Image"
+                      // data-cursor-text="Image"
                     >
-                      <img src="assets/images/G2.png" alt="img8" />
+                      <img src="assets/images/gallery/c.jpg" alt="img8" />
                     </a>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="video-popup-link hover-area"
-                      data-cursor-text="Video"
+                      // data-cursor-text="Video"
                     >
                       <img src="assets/images/G2.png" alt="img9" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
+                    <Link
                       href="assets/images/G1.jpg"
                       className="image-link hover-area"
-                      data-cursor-text="Image"
+                      // data-cursor-text="Image"
                     >
                       <img src="assets/images/G1.jpg" alt="img10" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="video-popup-link hover-area"
-                      data-cursor-text="Video"
+                      // data-cursor-text="Video"
                     >
-                      <img src="assets/images/G3.png" alt="img11" />
-                    </a>
+                      <img src="assets/images/gallery/d.jpg" alt="img11" />
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="assets/images/G3.png"
+                    <Link
+                      to="assets/images/G3.png"
                       className="image-link hover-area"
-                      data-cursor-text="Image"
+                      // data-cursor-text="Image"
                     >
                       <img src="assets/images/G2.png" alt="img12" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="video-popup-link hover-area"
-                      data-cursor-text="Video"
+                      // data-cursor-text="Video"
                     >
-                      <img src="assets/images/G2.png" alt="img13" />
-                    </a>
+                      <img src="assets/images/gallery/e.jpg" alt="img13" />
+                    </Link>
                   </div>
                 </div>
                 <div className="swiper-slide">
                   <div className="gallery-image">
-                    <a
-                      href="assets/images/G1.jpg"
+                    <Link
+                      to="assets/images/G1.jpg"
                       className="image-link hover-area"
-                      data-cursor-text="Image"
+                      // data-cursor-text="Image"
                     >
                       <img src="assets/images/G1.jpg" alt="img14" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
             {/* swiper-gallery2 */}
           </div>
+          {/* publisher section */}
+          {/* <BlogSwiperGrid/> */}
+
+          {/* publisher section */}
           {/*Gallery Section ======================*/}
           <section className="faq-section faq-1 mb-20 mb-lg-30">
             <div className="container" id="FAQ">
@@ -1513,8 +1535,7 @@ function App() {
                             aria-controls="itemOne"
                           >
                             <span className="text-opacity">
-                              The standard Lorem Ipsum passage, used since the
-                              1500s?
+                              Can anyone participate in festival?
                             </span>
                             <span className="faq-arrow">
                               <svg width={35} height={35}>
@@ -1529,11 +1550,8 @@ function App() {
                           data-bs-parent="#faq-1-accordion"
                         >
                           <p className="accordion-body pt-0 mb-0">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat..
+                            Yes, you may participate in the festival as an
+                            author, speaker, exhibitor or as a guest.
                           </p>
                         </div>
                       </div>
@@ -1549,8 +1567,7 @@ function App() {
                             aria-controls="itemTwo"
                           >
                             <span className="text-opacity">
-                              The standard Lorem Ipsum passage, used since the
-                              1500s?
+                              Can I get my book released in the festival?
                             </span>
                             <span className="faq-arrow">
                               <svg width={35} height={35}>
@@ -1565,11 +1582,7 @@ function App() {
                           data-bs-parent="#faq-1-accordion"
                         >
                           <p className="accordion-body pt-0 mb-0">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
+                            Yes, one can register for their book release.
                           </p>
                         </div>
                       </div>
@@ -1585,8 +1598,7 @@ function App() {
                             aria-controls="itemThree"
                           >
                             <span className="text-opacity">
-                              The standard Lorem Ipsum passage, used since the
-                              1500s?
+                              How to seek collaborations?
                             </span>
                             <span className="faq-arrow">
                               <svg width={35} height={35}>
@@ -1601,11 +1613,7 @@ function App() {
                           data-bs-parent="#faq-1-accordion"
                         >
                           <p className="accordion-body pt-0 mb-0">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
+                            One can write to collaborate as a sponsor.
                           </p>
                         </div>
                       </div>
@@ -1621,8 +1629,7 @@ function App() {
                             aria-controls="itemFour"
                           >
                             <span className="text-opacity">
-                              Are there age restrictions for attending the
-                              event?
+                              What are the internship opportunities?
                             </span>
                             <span className="faq-arrow">
                               <svg width={35} height={35}>
@@ -1637,11 +1644,8 @@ function App() {
                           data-bs-parent="#faq-1-accordion"
                         >
                           <p className="accordion-body pt-0 mb-0">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
+                            One may apply for the same at. Upon selection the
+                            interns would be notified and assigned their roles.
                           </p>
                         </div>
                       </div>
@@ -1657,7 +1661,7 @@ function App() {
                             aria-controls="itemFive"
                           >
                             <span className="text-opacity">
-                              Is there parking available at the venue?
+                              How to reach to the venue?
                             </span>
                             <span className="faq-arrow">
                               <svg width={35} height={35}>
@@ -1672,11 +1676,7 @@ function App() {
                           data-bs-parent="#faq-1-accordion"
                         >
                           <p className="accordion-body pt-0 mb-0">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
+                            Azad Maidan Fort, Mumbai, Maharashtra
                           </p>
                         </div>
                       </div>
@@ -1692,9 +1692,7 @@ function App() {
                             aria-controls="itemSix"
                           >
                             <span className="text-opacity">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed do eiusmod tempor incididunt ut labore
-                              et dolore magna aliqua.
+                              How can anyone volunteer in the festival?
                             </span>
                             <span className="faq-arrow">
                               <svg width={35} height={35}>
@@ -1709,14 +1707,45 @@ function App() {
                           data-bs-parent="#faq-1-accordion"
                         >
                           <p className="accordion-body pt-0 mb-0">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat..
+                            Volunteering is available and a training would be
+                            given to the selected volunteers for participating
+                            in the festival.
                           </p>
                         </div>
                       </div>
                       {/* accordion-item */}
+                      <div className="accordion-item">
+                        <h2 className="accordion-header">
+                          <button
+                            className="accordion-button d-flex justify-content-between align-items-center collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#itemSeven"
+                            aria-expanded="false"
+                            aria-controls="itemSeven"
+                          >
+                            <span className="text-opacity">
+                              What is the procedure to have an allocated book
+                              stall at the festival?
+                            </span>
+                            <span className="faq-arrow">
+                              <svg width={35} height={35}>
+                                <use xlinkHref="#faq-arrow" />
+                              </svg>
+                            </span>
+                          </button>
+                        </h2>
+                        <div
+                          id="itemSeven"
+                          className="accordion-collapse collapse"
+                          data-bs-parent="#faq-1-accordion"
+                        >
+                          <p className="accordion-body pt-0 mb-0">
+                            One may apply for the same, upon selection the book
+                            stall would be allocated.
+                          </p>
+                        </div>
+                      </div>
                     </div>
                     {/* .accordion */}
                     <div className="ellipse-image-2">
@@ -1732,204 +1761,7 @@ function App() {
           </section>
 
           {/*Merchandise Section ======================*/}
-          <section
-            id="registration"
-            className="merchandise-section merchandise-1 position-relative mb-50 mb-lg-100 mb-xxl-120 py-50 py-lg-100 py-xxl-120"
-          >
-            <div className="container" id="ticket">
-              <div className="row gy-4 gy-lg-0 align-items-lg-end justify-content-lg-between mb-40 mb-lg-70">
-                <div className="col-lg-4">
-                  <div className="section-title">
-                    <span className="fs-3 straight-line-wrapper fw-semibold position-relative">
-                      <span className="straight-line" />
-                      Lorem ipsum
-                    </span>
-                    <h2 className="title display-3 fw-extra-bold d-flex flex-column">
-                      <span className="mb-n2 text-opacity">Get Your</span>
-                      <span className="sub-title fw-extra-bold text-primary">
-                        Registration
-                      </span>
-                    </h2>
-                  </div>
-                  {/* section-title */}
-                </div>
-                <div className="col-lg-5">
-                  <div className="highlights-text">
-                    <p className="custom-jakarta custom-font-style-2 text-lg-end mb-2">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod Lorem ipsum dolor sit amet, consectetur
-                      adipiscing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua. tempor incididunt ut labore
-                      et dolore magna aliqua..
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* row */}
-              <div className="merchandise-contents position-relative">
-                <div className="ellipse-image-4">
-                  <img
-                    src="assets/images/ellipse-4.png"
-                    className="img-fluid"
-                    alt="img"
-                  />
-                </div>
-                <div className="swiper merchandise-swiper py-20">
-                  <div className="swiper-wrapper">
-                    <div className="swiper-slide">
-                      <div className="merchandise-wrapper">
-                        <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="Volunteer" />
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="product-information">
-                            <h5>Volunteer</h5>
-                          </div>
-                          <div className="d-flex align-items-center">
-                            <a
-                              href="#"
-                              className="btn btn-outline-primary btn-custom-light"
-                              aria-label="buttons"
-                            >
-                              Register
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="merchandise-wrapper">
-                        <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="Exhibitor" />
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="product-information">
-                            <h5>Exhibitor</h5>
-                          </div>
-                          <div className="d-flex align-items-center">
-                            <a
-                              href="#"
-                              className="btn btn-outline-primary btn-custom-light"
-                              aria-label="buttons"
-                            >
-                              Register
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="merchandise-wrapper">
-                        <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="Author" />
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="product-information">
-                            <h5>Author</h5>
-                          </div>
-                          <div>
-                            <a
-                              href="#"
-                              className="btn btn-outline-primary btn-custom-light"
-                              aria-label="buttons"
-                            >
-                              Register
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="merchandise-wrapper">
-                        <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="Speaker" />
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="product-information">
-                            <h5>Speaker</h5>
-                          </div>
-                          <div>
-                            <a
-                              href="#"
-                              className="btn btn-outline-primary btn-custom-light"
-                              aria-label="buttons"
-                            >
-                              Register
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="merchandise-wrapper">
-                        <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="Sponsor" />
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="product-information">
-                            <h5>Sponsor</h5>
-                          </div>
-                          <div>
-                            <a
-                              href="#"
-                              className="btn btn-outline-primary btn-custom-light"
-                              aria-label="buttons"
-                            >
-                              Register
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="merchandise-wrapper">
-                        <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="Visitor" />
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="product-information">
-                            <h5>Visitor</h5>
-                            {/* <h6 className="text-primary fw-bold">₹Free</h6> */}
-                          </div>
-                          <div className="d-flex align-items-center">
-                            <a
-                              href="#"
-                              className="btn btn-outline-primary btn-custom-light"
-                              aria-label="buttons"
-                            >
-                              Register
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="merchandise-wrapper">
-                        <div className="merchandise-image mb-4">
-                          <img src="assets/images/Ticket.png" alt="Vendor" />
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="product-information">
-                            <h5>Vendor</h5>
-                          </div>
-                          <div>
-                            <a
-                              href="#"
-                              className="btn btn-outline-primary btn-custom-light"
-                              aria-label="buttons"
-                            >
-                              Register
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* merchandise-swiper */}
-              </div>
-            </div>
-          </section>
+          <RegistrationSection />
           {/*Merchandise Section ======================*/}
           {/*CTA Section ======================*/}
           <section className="cta-section cta-1 pb-50 pb-lg-100 pb-xxl-120">
@@ -1959,7 +1791,10 @@ function App() {
                     </div>
                   </div>
                   <div className="col-lg-5">
-                    <h2 className="cta-text ms-xl-n60 display-3 fw-extra-bold text-opacity">
+                    <h2
+                      className="cta-text ms-xl-n60 display-3 fw-extra-bold text-opacity"
+                      style={{ color: "#4361EE !important" }}
+                    >
                       Get Your Tickets Today!
                     </h2>
                   </div>
@@ -2000,15 +1835,16 @@ function App() {
                         </h2>
                       </div>
                       {/* section-title */}
-                      <p className="custom-jakarta custom-font-style-2 mb-30">
-                        Azad Maidan Fort Mumbai, Maharashtra.
-                        <br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris
+                      <p className="custom-jakarta custom-font-style-2 fs-head-2">
+                        Azad Maidan Fort
                       </p>
-                      <div
+                      <p className="custom-jakarta custom-font-style-2 fs-head-3 mb-30">
+                        Mumbai, Maharashtra.
+                      </p>
+                      <p className="custom-jakarta custom-font-style-2 fs-head-3">
+                        Customer Care: 1800-NBT-1800
+                      </p>
+                      {/* <div
                         style={{
                           display: "flex",
                           gap: "25px",
@@ -2040,7 +1876,33 @@ function App() {
                             <i className={`fa fa-${platform}`}></i>
                           </a>
                         ))}
-                      </div>
+                      </div> */}
+
+                      {/* <div
+                        style={{
+                          display: "flex",
+                          gap: "25px",
+                          marginTop: "20px",
+                        }}
+                        className="social-container"
+                      >
+                        {["facebook", "twitter", "instagram", "linkedin"].map(
+                          (platform) => (
+                            <Link
+                              key={platform}
+                              href="#"
+                              className="social-icons"
+                            >
+                              <i className={`fa fa-${platform}`}></i>
+                            </Link>
+                          )
+                        )}
+                      </div> */}
+
+                      {/* <div className="social-menu-container">
+                      
+                      </div> */}
+                      <SocialIcons />
 
                       {/* <form action="#">
                       <div className="subscription-form position-relative">
@@ -2189,39 +2051,41 @@ function App() {
           {/*Subscription Section ======================*/}
         </div>
         {/* Footer ======================*/}
-        <footer className="footer-section footer-1 py-lg-50 py-40 mt-auto">
+        <footer className="footer-section footer-1 footerBG py-lg-50 py-40 mt-auto" style={{ backgroundImage: "url('../images/footer/Mumbai.jpg') !important;", backgroundRepeat: "no-repeat" }}>
           <div className="container">
             <div className="row gy-lg-0 gy-10 justify-content-between align-items-center text-center text-lg-start">
               <div className="col-lg-4 order-3 order-lg-1">
                 <p className="custom-jakarta custom-font-style-2 footer-nav">
                   © 2025{" "}
-                  <a
-                    href="https://themeperch.net/"
+                  <Link
+                    to="https://themeperch.net/"
                     className="text-decoration-none"
                     target="_blank"
                   >
                     5th Dimension Technologies
-                  </a>
+                  </Link>
                   {/* . All rights Reserved. */}
                 </p>
               </div>
               <div className="col-lg-4 order-1 order-lg-2">
-                <a
+                <Link
                   className="navbar-brand d-flex justify-content-center"
-                  href="index.html"
+                  to="/"
                   aria-label="nav-brands"
                 >
                   <img
-                    src="assets/images/logoo.png"
+                    src="https://res.cloudinary.com/dsj9t6adh/image/upload/v1737313139/jzcn2tynshjpdjflpysa.png"
                     className="logo-light"
                     alt="logo"
+                    style={{ width: "200px" }}
                   />
                   <img
-                    src="assets/images/logoo.png"
+                    src="https://res.cloudinary.com/dsj9t6adh/image/upload/v1737313139/jzcn2tynshjpdjflpysa.png"
                     className="logo-dark"
                     alt="logo"
+                    style={{ width: "200px" }}
                   />
-                </a>
+                </Link>
               </div>
               {/* <div className="col-lg-4 order-2 order-lg-3">
               <ul className="footer-nav list-unstyled d-flex justify-content-center justify-content-lg-end gap-30 mb-0">
