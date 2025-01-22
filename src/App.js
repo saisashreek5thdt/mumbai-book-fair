@@ -2051,7 +2051,7 @@ function App() {
           {/*Subscription Section ======================*/}
         </div>
         {/* Footer ======================*/}
-        <footer className="footer-section footer-1 footerBG py-lg-50 py-40 mt-auto" style={{ backgroundImage: "url('../images/footer/Mumbai.jpg') !important;", backgroundRepeat: "no-repeat" }}>
+        <footer className="footer-section footer-1 py-lg-50 py-40 mt-auto">
           <div className="container">
             <div className="row gy-lg-0 gy-10 justify-content-between align-items-center text-center text-lg-start">
               <div className="col-lg-4 order-3 order-lg-1">
